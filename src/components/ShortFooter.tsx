@@ -1,7 +1,7 @@
 function ShortFooter() {
     return ( 
         <div>
-            Footer
+            Footeeeer
         </div>
      );
 }

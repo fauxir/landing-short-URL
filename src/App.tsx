@@ -1,13 +1,14 @@
-import HeaderNav from "./components/headerNav";
+
 import HeroSection from "./components/heroSection";
 import ShortUrl from "./components/ShortUrl";
 import AdvancedStats from "./components/AdvancedStats";
 import BoostLink from "./components/BoostLink";
 import ShortFooter from "./components/ShortFooter";
+import NavBar from "./components/NavBar";
 
 function App() {
   return <div>
-    <HeaderNav />
+    <NavBar />
     <HeroSection />
     <ShortUrl />
     <AdvancedStats />
