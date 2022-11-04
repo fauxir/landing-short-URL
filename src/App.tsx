@@ -1,5 +1,5 @@
 
-import HeroSection from "./components/heroSection";
+import Hero from "./components/Hero";
 import ShortUrl from "./components/ShortUrl";
 import AdvancedStats from "./components/AdvancedStats";
 import BoostLink from "./components/BoostLink";
@@ -9,7 +9,7 @@ import NavBar from "./components/NavBar";
 function App() {
   return <div>
     <NavBar />
-    <HeroSection />
+    <Hero />
     <ShortUrl />
     <AdvancedStats />
     <BoostLink />
