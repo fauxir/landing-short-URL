@@ -76,7 +76,18 @@ module.exports = {
       '700': '#2c243f', 
       '800': '#231d32', 
       '900': '#1d1829'
-  },'robins-egg-blue': {
+  },'white': {
+    '50': '#ffffff', 
+    '100': '#ffffff', 
+    '200': '#ffffff', 
+    '300': '#ffffff', 
+    '400': '#ffffff', 
+    '500': '#ffffff', 
+    '600': '#e6e6e6', 
+    '700': '#bfbfbf', 
+    '800': '#999999', 
+    '900': '#7d7d7d'
+},'robins-egg-blue': {
       '50': '#f4fdfd', 
       '100': '#eafafa', 
       '200': '#caf3f3', 
