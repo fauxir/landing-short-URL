@@ -7,19 +7,6 @@ function NavBar() {
     setShow(!show);
   };
 
-  /*const dropRaiseMenu = () => {
-        let drop= "ceva";
-        if (drop !==  "w-full h-fit flex justify-center absolute") {
-            drop = "w-full h-fit flex justify-center absolute";
-            console.log(drop)
-            return drop;
-    } else if (drop === "w-full h-fit flex justify-center absolute") {
-        drop = "w-full h-fit flex justify-center absolute collapse"
-        console.log(drop);
-        return drop;
-    }
-    };*/
-
   return (
     <div>
       <div className="justify-between flex items-center m-3 mt-4">
