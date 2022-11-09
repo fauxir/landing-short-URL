@@ -1,42 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axious from "axios"
+import { useSelector, useDispatch } from "react-redux"
 
 function ShortUrl() {
 
-    const [shortlink, setShortLink] = useState("")
-    const [link, setLink] = useState("");
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState<any>(false);
+    const [shortLink, setShortLink] = useState<string>("");
+    const [link, setLink] = useState<string>("");
+    const [loading, setLoading] = useState<boolean>(false);
+    const [error, setError] = useState<boolean>(false);
+    const [id, setId] = useState<number>(0);
+    const [list, setList] = useState<any>([]);
 
-    type linkObj = {
-        id: number,
-        link: string,
-        shortLink: string
-    }
+    const dispatch = useDispatch();
 
-    let linkObj: any =  {
-        id: 0,
-        link: "",
-        shortLink: ""
-    }
-
-    let dataArray: any[] = []
-    let createDataObj = () => {
-        if (!loading){
-            linkObj.id = linkObj.id +1;
-            linkObj.link = link;
-            linkObj.shortLink = shortlink;
-            dataArray.push(linkObj)
-        }
-        return dataArray;
+    const addLinkList = () => {
+      setList([...list, {id: id, link: link, shortlink: shortLink}])
+      setId(id + 1)
+      setLink("");
+      setShortLink("");
+      dispatch(update(list));
     }
 
   const shortApi = async() => {
     try{
         const res: any = await axious (`https://api.shrtco.de/v2/shorten?url=${link}`)
         setShortLink(res.data.result.full_short_link)
-        createDataObj()
-        console.log(dataArray);
     } catch(err){
         setError(err);
     } finally {
@@ -62,7 +50,7 @@ function ShortUrl() {
           onChange={(e)=> {setLink(e.target.value)}}
         />
         <div className="h-10 absolute z-20 bg-robins-egg-blue-500 hover:bg-robins-egg-blue-400 flex justify-center items-center w-9/12 rounded-md cursor-pointer mt-36">
-          <div onClick={() => shortApi()} className="w-full h-fit text-center font-bold text-2x text-silver-100 mb-3 mt-3">
+          <div onClick={() => shortApi() && addLinkList()} className="w-full h-fit text-center font-bold text-2x text-silver-100 mb-3 mt-3">
             Shorten It!
           </div>
         </div>
