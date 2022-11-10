@@ -1,10 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
+import { Provider } from 'react-redux'
+import App  from './App'
+//import createStore from 'landing-short-url/src/redux/store.ts'
 import './index.css'
 
+//const store = createStore()
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
+  //<Provider store={store}> 
+  <React.Fragment>
     <App />
-  </React.StrictMode>
+  </React.Fragment>
+
+  //</Provider>
 )
